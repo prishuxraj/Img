@@ -365,53 +365,58 @@ def view_image(fid):
       <style>
         body {
           font-family: 'Segoe UI', sans-serif;
-          text-align: center;
           background: #fff;
-          margin: 0; padding: 20px;
-          max-width: 500px
+          margin: 0;
+          padding: 0 10px;
+          text-align: center;
         }
         h1 { margin-top: 20px; color: #007BFF; }
         .info-bar {
           display: flex;
           justify-content: space-between;
-          max-width: 500px;
+          max-width: 700px;
           margin: 10px auto;
           padding: 10px;
           background: #f2f2f2;
           border-radius: 8px;
           font-size: 0.9em;
         }
+        .btn {
+          padding: 8px 14px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 0.9em;
+          margin: 10px 6px;
+          font-weight: bold;
+        }
+        .btn.link {
+          background: #007bff;
+          color: white;
+        }
+        .btn.download {
+          background: #28a745;
+          color: white;
+        }
         .image-box {
           display: flex;
           flex-direction: column;
           align-items: center;
           background: #fff;
-          padding: 10px;
-          margin: 15px auto;
+          padding: 20px;
+          margin: 20px auto;
           border-radius: 10px;
           border: 1px solid #ddd;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-          max-width: 500px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+          max-width: 700px;
+          width: 100%;
         }
         .image-box img {
           width: 100%;
-          max-width: 450px;
+          max-width: 300px;
           height: auto;
           border-radius: 10px;
-          margin-bottom: 8px;
-        }
-        .btn {
-          display: inline-block;
-          margin-top: 10px;
-          padding: 10px 20px;
-          background: #28a745;
-          color: white;
-          text-decoration: none;
-          border-radius: 6px;
-          font-weight: bold;
-        }
-        .btn.link {
-          background: #007bff;
+          margin-bottom: 12px;
         }
       </style>
       <script>
@@ -435,8 +440,8 @@ def view_image(fid):
       <a class="btn link" href="{{ url_for('index') }}">⬅ Upload New Images</a>
 
       <div class="image-box">
-        <img src="{{ img['url'] }}" style="width:450px;" alt="Preview Image">
-        <a class="btn" href="{{ img['url'] }}" download>⬇ Download in HD</a>
+        <img src="{{ img['url'] }}" alt="Preview">
+        <a class="btn download" href="{{ img['url'] }}" download>⬇ Download in HD</a>
       </div>
     </body>
     </html>
@@ -473,4 +478,3 @@ def album(album_id):
 if __name__ == "__main__":
     load_data()
     app.run(debug=True, host="0.0.0.0", port=10000)
-            
