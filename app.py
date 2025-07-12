@@ -375,7 +375,7 @@ def view_image(fid):
           display: flex;
           justify-content: space-between;
           max-width: 700px;
-          margin: 10px auto;
+          margin: 10px auto 20px auto;
           padding: 10px;
           background: #f2f2f2;
           border-radius: 8px;
@@ -393,6 +393,7 @@ def view_image(fid):
         .btn.link {
           background: #007bff;
           color: white;
+          margin-bottom: 20px;
         }
         .btn.download {
           background: #28a745;
@@ -431,13 +432,13 @@ def view_image(fid):
     <body>
       <h1>Free Image Hosting By Prishu</h1>
 
-      <div class="info-bar">
+      <div class="info-bar" style="margin-bottom: 20px;">
         <div>👥 Visitors: {{ total_visitors }}</div>
         <div>⏰ <span id="live-time">{{ current_time.strftime('%H:%M:%S') }}</span></div>
         <div>📅 {{ current_time.strftime('%Y-%m-%d') }}</div>
       </div>
 
-      <a class="btn link" href="{{ url_for('index') }}">⬅ Upload New Images</a>
+      <a class="btn link" style="margin-bottom: 20px;" href="{{ url_for('index') }}">⬅ Upload New Images</a>
 
       <div class="image-box">
         <img src="{{ img['url'] }}" alt="Preview">
@@ -478,3 +479,4 @@ def album(album_id):
 if __name__ == "__main__":
     load_data()
     app.run(debug=True, host="0.0.0.0", port=10000)
+            
