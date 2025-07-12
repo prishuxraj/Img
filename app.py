@@ -368,6 +368,7 @@ def view_image(fid):
           text-align: center;
           background: #fff;
           margin: 0; padding: 20px;
+          max-width: 500px
         }
         h1 { margin-top: 20px; color: #007BFF; }
         .info-bar {
@@ -434,7 +435,7 @@ def view_image(fid):
       <a class="btn link" href="{{ url_for('index') }}">⬅ Upload New Images</a>
 
       <div class="image-box">
-        <img src="{{ img['url'] }}" style="width:150px;" alt="Preview Image">
+        <img src="{{ img['url'] }}" style="width:450px;" alt="Preview Image">
         <a class="btn" href="{{ img['url'] }}" download>⬇ Download in HD</a>
       </div>
     </body>
